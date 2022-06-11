@@ -3,11 +3,11 @@ project "GLFW"
     language "C"
     staticruntime "on"
     
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+    files
+    {
         "include/GLFW/glfw3.h",
         "include/GLFW/glfw3native.h",
         "src/glfw_config.h",
@@ -24,7 +24,7 @@ project "GLFW"
         "src/null_joystick.c"
     }
     
-	filter "system:windows"
+    filter "system:windows"
         systemversion "latest"
         
         files
@@ -41,8 +41,8 @@ project "GLFW"
             "src/win32_module.c"
         }
 
-		defines 
-		{ 
+        defines 
+        { 
             "_GLFW_WIN32",
             "_CRT_SECURE_NO_WARNINGS"
         }
@@ -61,14 +61,13 @@ project "GLFW"
             "src/egl_context.c",
             "src/osmesa_context.c"
         }
-		defines 
-		{ 
+        defines 
+        { 
             "_GLFW_COCOA",
             "_CRT_SECURE_NO_WARNINGS"
         }
      
 
-	
         filter "configurations:Debug"
             symbols "on"
             runtime "Debug"
